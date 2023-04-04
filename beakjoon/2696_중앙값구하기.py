@@ -11,8 +11,8 @@ for _ in range(case):
     answer = []
 
     # 리스트 두개 생성
-    small = []
-    big = []
+    small = [] # 최대 힙
+    big = [] # 최소힙
     mid = None
 
     for i in range(count):
@@ -29,7 +29,7 @@ for _ in range(case):
             # 작은 쪽의 원소가 많다면 큰 쪽으로 옮긴다.
             while len(small) > len(big):
                 heapq.heappush(big, mid)
-                mid = -heapq.heappop(small)
+                mid = -(heapq.heappop(small))
             # 큰 쪽의 원소가 많다면 작은 쪽으로 옮긴다.
             while len(small) < len(big):
                 heapq.heappush(small, -mid)
