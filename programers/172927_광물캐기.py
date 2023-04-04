@@ -12,8 +12,11 @@ def solution(picks, minerals):
             elif element == "stone":
                 number += 1
         minerals_bundle.append(number)
+
+
     if len(minerals_bundle) > total_mining:
         minerals_bundle = minerals_bundle[:total_mining]
+
     minerals_bundle.sort(reverse = True)
     pick_index = 0
     for i in minerals_bundle:
